@@ -27,6 +27,7 @@ import express from "express";
 import cors from "cors"; //Instalacion de cors para que front-end pueda acceder a la API
 
 import parqueoRoutes from "./routes/parqueo.routes.js"; //Importacion de las rutas de la API
+import usuarioRoutes from "./routes/usuario.routes.js";
 
 const { NAME, VERSION, DESCRIPTION, AUTHOR } = process.env;
 
@@ -46,8 +47,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/parqueo", parqueoRoutes); //Se utiliza la ruta de la API para acceder a las rutas de la API, se llama a la función parqueoRoutes que se encuentra en el archivo parqueo.routes.js, para que el front-end pueda acceder a las rutas de la API
+//Para postman {"placa": "123","tipo": "carro", "horas":3, "minutos":6}
 
-//PARA POSTMAN {"placa": "123","tipo": "carro", "horas":3, "minutos":6}
+app.use("/api/usuarios", usuarioRoutes); //Se utiliza la ruta de la API para acceder a las rutas de la API, se llama a la función usuarioRoutes que se encuentra en el archivo usuario.routes.js, para que el front-end pueda acceder a las rutas de la API
+//Para postman {"nombre": "Juan Pérez","correo": "juan.perez@example.com","contrasena": "Password123","confirmacion": "Password123"}
 
 app.listen(PORT, () => {
   console.log(`${NAME} ejecutándose en http://localhost:${PORT}`
