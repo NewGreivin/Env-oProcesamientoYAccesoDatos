@@ -1,3 +1,27 @@
+//SERVER_NAME="Servidor de envio y procesamiento de datos"
+//SERVER_VERSION="1.0.0"
+//SERVER_DESCRIPTION="Servidor para recibir y enviar datos"
+//SERVER_PORT=4000
+
+//Este es el .env que se encuetra dentro de backend. 
+
+//Comandos usados para crear: 
+    //npm install express
+    //npm install dotenv
+    //npm install cors
+    //npm install -D nodemon
+
+    //npm install morgan
+
+        //Correr: 
+            //npm start
+
+
+    //.gitignore
+        //node_modules/
+        //.env
+
+
 import "dotenv/config"; //Si la ruta del .env en otro .env, "dotenv/config(.env.development)" 
 import express from "express";
 import cors from "cors"; //Instalacion de cors para que front-end pueda acceder a la API
@@ -23,6 +47,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/parqueo", parqueoRoutes); //Se utiliza la ruta de la API para acceder a las rutas de la API, se llama a la función parqueoRoutes que se encuentra en el archivo parqueo.routes.js, para que el front-end pueda acceder a las rutas de la API
 
+//PARA POSTMAN {"placa": "123","tipo": "carro", "horas":3, "minutos":6}
 
 app.listen(PORT, () => {
   console.log(`${NAME} ejecutándose en http://localhost:${PORT}`
