@@ -11,3 +11,6 @@ DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=root
 DB_NAME=appnode
+
+
+Comando para reiniciar el npm del cmd "npm.cmd start"
