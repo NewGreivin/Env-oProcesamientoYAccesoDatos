@@ -1,5 +1,5 @@
 import { Router } from "express"; //Importacion de la librería express para crear rutas en el servidor
-import { agregarUsuario, obtenerUsuarios, obtenerUsuarioPorId, modificarUsuario, eliminarUsuario } 
+import { agregarUsuario, obtenerUsuarios, obtenerUsuarioPorId, modificarUsuario, eliminarUsuario, loginUsuario } 
 from "../controllers/usuario.controller.js";
 
 const router = Router();
@@ -18,6 +18,9 @@ router.put("/:id", modificarUsuario);
 
 // Ruta para eliminar un usuario por su ID
 router.delete("/:id", eliminarUsuario);
+
+// Ruta para iniciar sesión de usuario
+router.post("/login", loginUsuario);
 
 export default router;
 
